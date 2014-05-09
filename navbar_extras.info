@@ -1,0 +1,5 @@
+name = Navbar Extras
+description = Adds some useful items to main navbar menu.
+core = 7.x
+
+dependencies[] = navbar

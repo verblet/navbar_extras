@@ -1,0 +1,73 @@
+<?php
+
+/**
+ * @file
+ * Main file for NavBar extras module.
+ */
+
+/**
+ * Implements hook_navbar().
+ */
+function navbar_extras_navbar() {
+  $items = array();
+
+  // Devel menu.
+  if (module_exists('devel') && user_access('access devel information')) {
+    $tree = menu_tree_all_data('devel');
+    $items['devel'] = array(
+      '#type' => 'navbar_item',
+      'tab' => array(
+        '#type' => 'link',
+        '#title' => t('Devel'),
+        '#href' => 'devel/settings',
+        '#options' => array(
+          'attributes' => array(
+            'title' => t('Development'),
+            'class' => array('navbar-icon', 'navbar-icon-develop', 'navbar-tab'),
+          ),
+        ),
+      ),
+      'tray' => array(
+        '#heading' => t('Development'),
+        'development_menu' => menu_tree_output($tree),
+      ),
+    );
+  }
+
+  // Content creation menu.
+  $node_add_link = menu_get_item('node/add');
+
+  // Use system_admin_menu_block() instead of fetching all content types to get
+  // all sub-paths, because some modules can add own links under node/add,
+  // which are not node creation pages in fact, for example, panopoly_pages.
+  $content = system_admin_menu_block($node_add_link);
+  $menu_tree = array();
+  foreach($content as $key => $item) {
+    $item['in_active_trail'] = FALSE;
+    $menu_tree[$key] = array('link' => $item, 'below' => array());
+  }
+  navbar_menu_navigation_links($menu_tree);
+
+  $items['create-content'] = array(
+    '#type' => 'navbar_item',
+    'tab' => array(
+      '#type' => 'link',
+      '#title' => t('New'),
+      '#href' => 'admin',
+      '#options' => array(
+        'attributes' => array(
+          'title' => t('Content creation menu'),
+          'class' => array('navbar-icon', 'navbar-icon-new', 'navbar-tab',),
+        ),
+      ),
+    ),
+    'tray' => array(
+      '#heading' => t('Content creation menu'),
+      'content_creation_menu' => menu_tree_output($menu_tree),
+    ),
+    '#weight' => -15,
+  );
+
+  return $items;
+
+}
