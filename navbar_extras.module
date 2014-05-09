@@ -23,7 +23,7 @@ function navbar_extras_navbar() {
         '#options' => array(
           'attributes' => array(
             'title' => t('Development'),
-            'class' => array('navbar-icon', 'navbar-icon-develop', 'navbar-tab'),
+            'class' => array('navbar-icon', 'navbar-icon-devel', 'navbar-tab'),
           ),
         ),
       ),
