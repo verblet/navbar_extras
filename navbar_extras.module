@@ -42,7 +42,7 @@ function navbar_extras_navbar() {
   // which are not node creation pages in fact, for example, panopoly_pages.
   $content = system_admin_menu_block($node_add_link);
   $menu_tree = array();
-  foreach($content as $key => $item) {
+  foreach ($content as $key => $item) {
     $item['in_active_trail'] = FALSE;
     $menu_tree[$key] = array('link' => $item, 'below' => array());
   }
@@ -57,7 +57,7 @@ function navbar_extras_navbar() {
       '#options' => array(
         'attributes' => array(
           'title' => t('Content creation menu'),
-          'class' => array('navbar-icon', 'navbar-icon-new', 'navbar-tab',),
+          'class' => array('navbar-icon', 'navbar-icon-new', 'navbar-tab'),
         ),
       ),
     ),
