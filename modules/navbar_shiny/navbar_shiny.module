@@ -14,5 +14,3 @@ function navbar_shiny_page_build(&$page) {
     drupal_add_css(drupal_get_path('module', 'navbar_shiny') . '/css/navbar_shiny.css');
   }
 }
-
-

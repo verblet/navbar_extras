@@ -30,7 +30,7 @@
 
 .drupal-navbar .navbar-tray-vertical .menu li.active-trail.level-1 > .navbar-box,
 .drupal-navbar .navbar-tray-horizontal .menu li.active-trail.level-1 > .navbar-box {
-  background-color: #0074A2;
+  background-color: #0074a2;
 }
 
 .drupal-navbar .menu .menu a {
@@ -82,11 +82,8 @@
 
 @font-face {
   font-family: 'libricons';
-  src:url('../fonts/libricons.eot');
-  src:url('../fonts/libricons.eot?#iefix') format('embedded-opentype'),
-               url('../fonts/libricons.woff') format('woff'),
-               url('../fonts/libricons.ttf') format('truetype'),
-               url('../fonts/libricons.svg#libricons') format('svg');
+  src: url('../fonts/libricons.eot');
+  src: url('../fonts/libricons.eot?#iefix') format('embedded-opentype'), url('../fonts/libricons.woff') format('woff'), url('../fonts/libricons.ttf') format('truetype'), url('../fonts/libricons.svg#libricons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -195,4 +192,3 @@
 .drupal-navbar .navbar-toggle-orientation [value="vertical"]:before {
   content: "\e01f";
 }
-
