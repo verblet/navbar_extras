@@ -1,0 +1,5 @@
+name = Navbar Shiny
+description = UI styles impromevents for Navbar (dark theme)
+core = 7.x
+
+dependencies[] = navbar
