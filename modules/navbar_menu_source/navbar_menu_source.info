@@ -1,0 +1,7 @@
+name = Navbar Menu Source
+description = Add ability to assign custom menu for navbar Menu entry
+core = 7.x
+
+dependencies[] = navbar
+
+configure = admin/config/user-interface/navbar_menu_source
