@@ -36,38 +36,38 @@ function navbar_extras_navbar() {
 
   // Content creation menu.
   $node_add_link = menu_get_item('node/add');
+  if ($node_add_link['access']) {
+    // Use system_admin_menu_block() instead of fetching all content types to get
+    // all sub-paths, because some modules can add own links under node/add,
+    // which are not node creation pages in fact, for example, panopoly_pages.
+    $content = system_admin_menu_block($node_add_link);
+    $menu_tree = array();
+    foreach ($content as $key => $item) {
+      $item['in_active_trail'] = FALSE;
+      $menu_tree[$key] = array('link' => $item, 'below' => array());
+    }
+    navbar_menu_navigation_links($menu_tree);
 
-  // Use system_admin_menu_block() instead of fetching all content types to get
-  // all sub-paths, because some modules can add own links under node/add,
-  // which are not node creation pages in fact, for example, panopoly_pages.
-  $content = system_admin_menu_block($node_add_link);
-  $menu_tree = array();
-  foreach ($content as $key => $item) {
-    $item['in_active_trail'] = FALSE;
-    $menu_tree[$key] = array('link' => $item, 'below' => array());
-  }
-  navbar_menu_navigation_links($menu_tree);
-
-  $items['create-content'] = array(
-    '#type' => 'navbar_item',
-    'tab' => array(
-      '#type' => 'link',
-      '#title' => t('New'),
-      '#href' => 'admin',
-      '#options' => array(
-        'attributes' => array(
-          'title' => t('Content creation menu'),
-          'class' => array('navbar-icon', 'navbar-icon-new', 'navbar-tab'),
+    $items['create-content'] = array(
+      '#type' => 'navbar_item',
+      'tab' => array(
+        '#type' => 'link',
+        '#title' => t('New'),
+        '#href' => 'admin',
+        '#options' => array(
+          'attributes' => array(
+            'title' => t('Content creation menu'),
+            'class' => array('navbar-icon', 'navbar-icon-new', 'navbar-tab'),
+          ),
         ),
       ),
-    ),
-    'tray' => array(
-      '#heading' => t('Content creation menu'),
-      'content_creation_menu' => menu_tree_output($menu_tree),
-    ),
-    '#weight' => -15,
-  );
+      'tray' => array(
+        '#heading' => t('Content creation menu'),
+        'content_creation_menu' => menu_tree_output($menu_tree),
+      ),
+      '#weight' => -15,
+    );
 
-  return $items;
-
+    return $items;
+  }
 }
