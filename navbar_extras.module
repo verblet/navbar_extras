@@ -31,6 +31,7 @@ function navbar_extras_navbar() {
         '#heading' => t('Development'),
         'development_menu' => menu_tree_output($tree),
       ),
+      '#weight' => 50,
     );
   }
 
@@ -65,7 +66,7 @@ function navbar_extras_navbar() {
         '#heading' => t('Content creation menu'),
         'content_creation_menu' => menu_tree_output($menu_tree),
       ),
-      '#weight' => -15,
+      '#weight' => -10,
     );
 
     return $items;
