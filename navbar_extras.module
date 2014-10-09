@@ -6,6 +6,37 @@
  */
 
 /**
+ * Implements hook_menu().
+ */
+function navbar_extras_menu() {
+  $items = array();
+
+  $items['admin/config/user-interface/navbar'] = array(
+    'title'            => 'Navbar',
+    'description'      => 'Configuration options for navbar',
+    'access arguments' => array('administer navbar'),
+    'page callback'    => 'drupal_get_form',
+    'page arguments'   => array('navbar_extras_settings_form'),
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function navbar_extras_permission() {
+  $return = array();
+
+  $return['administer navbar'] = array(
+    'title'       => t('Administer navbar'),
+    'description' => t('Administer configuration for navbar module'),
+  );
+
+  return $return;
+}
+
+/**
  * Implements hook_navbar().
  */
 function navbar_extras_navbar() {
@@ -71,4 +102,32 @@ function navbar_extras_navbar() {
 
     return $items;
   }
+}
+
+/**
+ * Implements hook_page_build().
+ */
+function navbar_extras_page_build(&$page) {
+  global $user;
+  if ($user->uid == 1 &&
+    !variable_get('navbar_admin_display', 0) &&
+    !empty($page['page_top']['navbar'])) {
+    $page['page_top']['navbar']['#access'] = FALSE;
+  }
+}
+
+/**
+ * Callback for 'admin/config/user-interface/navbar'.
+ */
+function navbar_extras_settings_form($form, &$form_state) {
+  $form = array();
+
+  $form['navbar_admin_display'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show navbar for admin'),
+    '#description' => t('Allows to show/hide navbar for admin user (uid=1).'),
+    '#default_value' => variable_get('navbar_admin_display', 1),
+  );
+
+  return system_settings_form($form);
 }
