@@ -69,8 +69,8 @@ function navbar_extras_navbar() {
   // Content creation menu.
   $node_add_link = menu_get_item('node/add');
   if ($node_add_link['access']) {
-    // Use system_admin_menu_block() instead of fetching all content types to get
-    // all sub-paths, because some modules can add own links under node/add,
+    // Use system_admin_menu_block() instead of fetching all content types to
+    // get all sub-paths, because some modules can add own links under node/add,
     // which are not node creation pages in fact, for example, panopoly_pages.
     $content = system_admin_menu_block($node_add_link);
     $menu_tree = array();
@@ -116,10 +116,10 @@ function navbar_extras_navbar_alter(&$items) {
 
   // Add navbar JS settings.
   $js_settings = array();
-  if(variable_get('navbar_extras_open_menu')) {
+  if (variable_get('navbar_extras_open_menu')) {
     $js_settings['navbar_extras_open_menu'] = TRUE;
   }
-  if(variable_get('navbar_extras_lock_vertically')) {
+  if (variable_get('navbar_extras_lock_vertically')) {
     $js_settings['navbar_extras_lock_vertically'] = TRUE;
   }
   $items['administration']['#attached']['js'][] = array(
@@ -136,12 +136,12 @@ function navbar_extras_navbar_alter(&$items) {
  * Implements hook_page_build().
  */
 function navbar_extras_page_build(&$page) {
-  if(empty($page['page_top']['navbar'])) {
+  if (empty($page['page_top']['navbar'])) {
     return;
   }
 
   // Show/hide navbar for admin user.
-  if(!variable_get('navbar_extras_admin_display', 0)) {
+  if (!variable_get('navbar_extras_admin_display', 0)) {
     global $user;
     $page['page_top']['navbar']['#access'] = ($user->uid != 1);
   }

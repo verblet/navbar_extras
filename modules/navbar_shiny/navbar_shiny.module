@@ -5,7 +5,6 @@
  * Main file for Navbar Shiny module.
  */
 
-
 /**
  * Implements hook_page_build().
  */

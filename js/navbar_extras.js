@@ -1,3 +1,8 @@
+/**
+ * @file
+ * JS to automatically open navbar and to lock it vertically.
+ */
+
 (function($) {
   Drupal.behaviors.navbar_extras = {
     attach: function(context, settings) {
