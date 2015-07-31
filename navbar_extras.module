@@ -102,6 +102,8 @@ function navbar_extras_navbar() {
 
     return $items;
   }
+
+  return $items;
 }
 
 /**
@@ -114,11 +116,11 @@ function navbar_extras_navbar_alter(&$items) {
 
   // Add navbar JS settings.
   $js_settings = array();
-  if(variable_get('navbar_open_menu')) {
-    $js_settings['navbar_open_menu'] = TRUE;
+  if(variable_get('navbar_extras_open_menu')) {
+    $js_settings['navbar_extras_open_menu'] = TRUE;
   }
-  if(variable_get('navbar_lock_vertically')) {
-    $js_settings['navbar_lock_vertically'] = TRUE;
+  if(variable_get('navbar_extras_lock_vertically')) {
+    $js_settings['navbar_extras_lock_vertically'] = TRUE;
   }
   $items['administration']['#attached']['js'][] = array(
     'data' => drupal_get_path('module', 'navbar_extras') . '/js/navbar_extras.js',
@@ -139,7 +141,7 @@ function navbar_extras_page_build(&$page) {
   }
 
   // Show/hide navbar for admin user.
-  if(!variable_get('navbar_admin_display', 0)) {
+  if(!variable_get('navbar_extras_admin_display', 0)) {
     global $user;
     $page['page_top']['navbar']['#access'] = ($user->uid != 1);
   }
@@ -151,25 +153,25 @@ function navbar_extras_page_build(&$page) {
 function navbar_extras_settings_form($form, &$form_state) {
   $form = array();
 
-  $form['navbar_admin_display'] = array(
+  $form['navbar_extras_admin_display'] = array(
     '#type' => 'checkbox',
     '#title' => t('Show navbar for admin'),
     '#description' => t('Allows to show/hide navbar for admin user (uid=1).'),
-    '#default_value' => variable_get('navbar_admin_display', 1),
+    '#default_value' => variable_get('navbar_extras_admin_display', 1),
   );
 
-  $form['navbar_open_menu'] = array(
+  $form['navbar_extras_open_menu'] = array(
     '#type' => 'checkbox',
     '#title' => t('Open Menu item by default'),
     '#description' => t('Show Menu item opened by default'),
-    '#default_value' => variable_get('navbar_open_menu'),
+    '#default_value' => variable_get('navbar_extras_open_menu'),
   );
 
-  $form['navbar_lock_vertically'] = array(
+  $form['navbar_extras_lock_vertically'] = array(
     '#type' => 'checkbox',
     '#title' => t('Lock navbar vertically'),
     '#description' => t('Fix position of navbar at right side (vertically) by default at page load.'),
-    '#default_value' => variable_get('navbar_lock_vertically'),
+    '#default_value' => variable_get('navbar_extras_lock_vertically'),
   );
 
   return system_settings_form($form);
