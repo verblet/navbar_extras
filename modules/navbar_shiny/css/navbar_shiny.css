@@ -1,5 +1,5 @@
-body.navbar-administration #navbar-administration.drupal-navbar ul.menu li a,
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-tab a {
+#navbar-administration ul.navbar-menu li a,
+#navbar-administration .navbar-tab a {
   color: #eee;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
@@ -7,71 +7,81 @@ body.navbar-administration #navbar-administration.drupal-navbar .navbar-tab a {
   padding-top: 1em;
   padding-bottom: 1em;
 }
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-tray {
+
+#navbar-administration .navbar-tab a:focus {
+  border: none;
+}
+
+#navbar-administration .navbar-tab a.active,
+#navbar-administration .navbar-tab a.active:before {
+  color: #2ea2cc;
+}
+
+body.navbar-fixed #navbar-administration .navbar-tray-vertical {
   overflow: hidden;
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-tray .menu li.open ul a {
+#navbar-administration .navbar-tray .navbar-menu li.open ul a {
   padding-top: 0.7em;
   font-size: 12px;
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-tray > .navbar-lining,
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-toggle-orientation,
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-tray-horizontal .menu,
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-tray > .navbar-lining:before {
+#navbar-administration .navbar-icon.navbar-handle:focus {
+  background-color: transparent;
+}
+
+#navbar-administration .navbar-tray,
+#navbar-administration .navbar-toggle-orientation,
+#navbar-administration .navbar-menu {
   background-color: #222;
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-tray-vertical .menu li.open,
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-level-2 > ul {
+#navbar-administration .navbar-tray-horizontal .navbar-toggle-orientation {
+  border: none;
+}
+
+#navbar-administration .navbar-tray-vertical .navbar-menu li.open,
+#navbar-administration .navbar-level-2 > ul {
   background-color: #333;
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-tray-vertical .menu li.navbar-active-trail.navbar-level-1 > .navbar-box,
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-tray-horizontal .menu li.navbar-active-trail.navbar-level-1 > .navbar-box {
+#navbar-administration .navbar-menu li.navbar-level-1 > div.navbar-box a.active {
   background-color: #0074a2;
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .menu .menu a {
+#navbar-administration .navbar-menu .navbar-menu a {
   color: #bbb;
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-tray a:hover,
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-tray .navbar-active-trail.navbar-level-1 > ul a:hover,
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-tab a:hover {
+#navbar-administration .navbar-tray a:hover,
+#navbar-administration .navbar-tab a:hover {
   color: #2ea2cc;
   text-decoration: none;
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-tray .navbar-active-trail a:hover,
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-tray .navbar-active-trail > .navbar-box a,
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-tray .navbar-active-trail.navbar-level-1 > ul a.active:hover,
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-tray a.active {
+#navbar-administration .navbar-tray a.active:hover,
+#navbar-administration .navbar-tray a.active > .navbar-box a,
+/*#navbar-administration .navbar-tray .navbar-level-1 a.active > ul a.active:hover,*/
+#navbar-administration .navbar-tray a.active {
   color: #eee;
   text-decoration: none;
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-tray .menu li + li,
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-tray-vertical .menu ul ul,
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-tray-vertical .menu li:last-child,
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-tray-horizontal .menu li + li,
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-tray-horizontal .menu li:last-child {
+#navbar-administration .navbar-tray-vertical .navbar-menu ul ul,
+#navbar-administration .navbar-tray-horizontal .navbar-menu ul ul,
+#navbar-administration .navbar-tray .navbar-menu li + li,
+#navbar-administration .navbar-menu li + li,
+#navbar-administration .navbar-tray-vertical .navbar-menu li:last-child,
+#navbar-administration .navbar-tray-horizontal .navbar-menu .navbar-level-1:last-child {
   border: none;
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-icon.navbar-handle:focus,
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-toggle-orientation button:focus {
-  outline: none;
-}
-
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-tray-vertical .menu li.open.navbar-level-1 > .navbar-box a,
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-tray .navbar-level-1.navbar-active-trail > .navbar-box a {
+#navbar-administration .navbar-tray-vertical .navbar-menu li.open.navbar-level-1 > .navbar-box a,
+#navbar-administration .navbar-tray .navbar-level-1.navbar-active-trail > .navbar-box a {
   font-weight: normal;
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-tray-vertical .menu li.open.navbar-level-2 > .navbar-box,
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-tray-horizontal .menu li.open.navbar-level-2 > .navbar-box {
+#navbar-administration li.open.navbar-level-2 > .navbar-box a {
   font-weight: bold;
 }
 
@@ -88,11 +98,11 @@ body.navbar-administration #navbar-administration.drupal-navbar .navbar-tray-hor
   font-style: normal;
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-icon {
+#navbar-administration .navbar-icon {
   padding-left: 3em;
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-icon:before {
+#navbar-administration .navbar-icon:before {
   background-image: none !important;
   font-family: libricons, sans-serif;
   font-size: 18px;
@@ -101,94 +111,94 @@ body.navbar-administration #navbar-administration.drupal-navbar .navbar-icon:bef
   color: #999;
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-icon:hover:before,
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-bar .navbar-icon.active:hover:before {
+#navbar-administration .navbar-icon:hover:before,
+#navbar-administration .navbar-bar .navbar-icon.active:hover:before {
   color: #2ea2cc;
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-icon.active:before,
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-active-trail .navbar-icon:before,
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-icon.active:hover:before {
+#navbar-administration .navbar-icon.active:before,
+#navbar-administration .navbar-active-trail .navbar-icon:before,
+#navbar-administration .navbar-icon.active:hover:before {
   color: #eee;
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-icon-home:before {
+#navbar-administration .navbar-icon-home:before {
   content: "\e000";
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-icon-menu:before {
+#navbar-administration .navbar-icon-menu:before {
   content: "\e001";
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-icon-new:before {
+#navbar-administration .navbar-icon-new:before {
   content: "\e00c";
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-icon-shortcut:before {
+#navbar-administration .navbar-icon-shortcut:before {
   content: "\e003";
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-icon-devel:before,
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-icon-development:before {
+#navbar-administration .navbar-icon-devel:before,
+#navbar-administration .navbar-icon-development:before {
   content: "\e011";
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-icon-user:before {
+#navbar-administration .navbar-icon-user:before {
   content: "\e005";
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-icon-content:before {
+#navbar-administration .navbar-icon-content:before {
   content: "\e024";
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-icon-structure:before {
+#navbar-administration .navbar-icon-structure:before {
   content: "\e015";
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-icon-appearance:before {
+#navbar-administration .navbar-icon-appearance:before {
   content: "\e016";
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-icon-users:before,
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-icon-people:before {
+#navbar-administration .navbar-icon-users:before,
+#navbar-administration .navbar-icon-people:before {
   content: "\e006";
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-icon-modules:before {
+#navbar-administration .navbar-icon-modules:before {
   content: "\e017";
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-icon-configuration:before {
+#navbar-administration .navbar-icon-configuration:before {
   content: "\e018";
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-icon-reports:before {
+#navbar-administration .navbar-icon-reports:before {
   content: "\e019";
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-icon-help:before {
+#navbar-administration .navbar-icon-help:before {
   content: "\e01b";
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-icon.navbar-handle:before {
+#navbar-administration .navbar-icon.navbar-handle:before {
   content: "\e03d";
   text-indent: 0;
-  width: 2.5em;
+  margin-left: -5px;
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-icon.navbar-handle.open:before {
+#navbar-administration .navbar-icon.navbar-handle.open:before {
   content: "\e03b";
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-toggle-orientation :before {
+#navbar-administration .navbar-toggle-orientation :before {
   text-indent: 0;
   top: 0;
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-toggle-orientation [value="horizontal"]:before {
+#navbar-administration .navbar-toggle-orientation [value="horizontal"]:before {
   content: "\e01c";
 }
 
-body.navbar-administration #navbar-administration.drupal-navbar .navbar-toggle-orientation [value="vertical"]:before {
+#navbar-administration .navbar-toggle-orientation [value="vertical"]:before {
   content: "\e01f";
 }
