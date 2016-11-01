@@ -45,8 +45,20 @@ body.navbar-fixed #navbar-administration .navbar-tray-vertical {
   background-color: #333;
 }
 
-#navbar-administration .navbar-menu li.navbar-level-1 > div.navbar-box a.active {
-  background-color: #0074a2;
+
+#navbar-administration .navbar-menu li.navbar-level-1.navbar-active-trail > div.navbar-box > a {
+  font-weight:bold;
+}
+
+#navbar-administration .navbar-menu li.navbar-active-trail > div.navbar-box > a.navbar-active {
+  background-color: #0074a2 !important;
+  color: #fff;
+  font-weight: bold;
+}
+
+
+#navbar-administration .navbar-menu li.navbar-active-trail > div.navbar-box > a.active {
+  background-color: transparent;
 }
 
 #navbar-administration .navbar-menu .navbar-menu a {
@@ -59,6 +71,7 @@ body.navbar-fixed #navbar-administration .navbar-tray-vertical {
   text-decoration: none;
 }
 
+#navbar-administration .navbar-tray .navbar-active-trail > .navbar-box .navbar-menu-item,
 #navbar-administration .navbar-tray a.active:hover,
 #navbar-administration .navbar-tray a.active > .navbar-box a,
 /*#navbar-administration .navbar-tray .navbar-level-1 a.active > ul a.active:hover,*/
