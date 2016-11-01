@@ -15,7 +15,7 @@
 
 #navbar-administration .navbar-tab a.active,
 #navbar-administration .navbar-tab a.active:before {
-  color: #2ea2cc;
+  color: #43B02A;
 }
 
 body.navbar-fixed #navbar-administration .navbar-tray-vertical {
@@ -52,7 +52,8 @@ body.navbar-fixed #navbar-administration .navbar-tray-vertical {
 }
 
 #navbar-administration .navbar-menu li.navbar-active-trail > div.navbar-box > a.navbar-active {
-  background-color: #0074a2 !important;
+  box-shadow: inset -6px 0 0 #43B02A !important;
+  color: #43B02A;
   color: #fff;
   font-weight: bold;
 }
@@ -68,7 +69,7 @@ body.navbar-fixed #navbar-administration .navbar-tray-vertical {
 
 #navbar-administration .navbar-tray a:hover,
 #navbar-administration .navbar-tab a:hover {
-  color: #2ea2cc;
+  color: #43B02A;
   text-decoration: none;
 }
 
@@ -132,7 +133,7 @@ body.navbar-fixed #navbar-administration .navbar-tray-vertical {
 
 #navbar-administration .navbar-icon:hover:before,
 #navbar-administration .navbar-bar .navbar-icon.active:hover:before {
-  color: #2ea2cc !important;
+  color: #43B02A !important;
 }
 
 #navbar-administration .navbar-icon.active:before,
