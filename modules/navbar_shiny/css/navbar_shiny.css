@@ -6,6 +6,7 @@
   line-height: 1.2em;
   padding-top: 1em;
   padding-bottom: 1em;
+  border: 0;
 }
 
 #navbar-administration .navbar-tab a:focus {
@@ -124,9 +125,14 @@ body.navbar-fixed #navbar-administration .navbar-tray-vertical {
   color: #999;
 }
 
+
+#navbar-administration .navbar-level-2 .navbar-icon:before {
+  top: 0.3em;
+}
+
 #navbar-administration .navbar-icon:hover:before,
 #navbar-administration .navbar-bar .navbar-icon.active:hover:before {
-  color: #2ea2cc;
+  color: #2ea2cc !important;
 }
 
 #navbar-administration .navbar-icon.active:before,
