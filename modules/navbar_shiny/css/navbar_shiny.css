@@ -13,8 +13,8 @@
   border: none;
 }
 
-#navbar-administration .navbar-tab a.active,
-#navbar-administration .navbar-tab a.active:before {
+#navbar-administration .navbar-tab a.navbar-active,
+#navbar-administration .navbar-tab a.navbar-active:before {
   color: #43B02A;
 }
 
